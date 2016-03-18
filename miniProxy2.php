@@ -137,19 +137,6 @@ function makeRequest($url) {
 
   return array("headers" => $responseHeaders, "body" => $responseBody, "responseInfo" => $responseInfo);
 
-  if($debugmod){
-    curl_setopt($ch, CURLOPT_VERBOSE, true);
-    $verbose = fopen('log', 'w+');
-    curl_setopt($ch, CURLOPT_STDERR, $verbose);
-    if ($result === FALSE) {
-        printf("cUrl error (#%d): %s<br>\n", curl_errno($ch),
-            htmlspecialchars(curl_error($ch)));
-      }
-      rewind($verbose);
-      $verboseLog = stream_get_contents($verbose);
-
-    }
-
 
 }
 
@@ -232,6 +219,15 @@ $response = makeRequest($url);
 $rawResponseHeaders = $response["headers"];
 $responseBody = $response["body"];
 $responseInfo = $response["responseInfo"];
+
+if($debugmod){
+  curl_setopt($response, CURLOPT_VERBOSE, true);
+  $verbose = fopen('log', 'w+');
+  curl_setopt($response, CURLOPT_STDERR, $verbose);
+  rewind($verbose);
+  $verboseLog = stream_get_contents($verbose);
+}
+
 
 //A regex that indicates which server response headers should be stripped out of the proxified response.
 $header_blacklist_pattern = "/^Content-Length|^Transfer-Encoding|^Content-Encoding.*gzip/i";
