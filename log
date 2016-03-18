@@ -1,0 +1,38 @@
+* Hostname http2.akamai.com was found in DNS cache
+*   Trying 23.0.36.175...
+* Connected to http2.akamai.com (23.0.36.175) port 443 (#0)
+* TLS 1.2 connection using TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+* Server certificate: http2.akamai.com
+* Server certificate: Verizon Akamai SureServer CA G14-SHA2
+* Server certificate: Baltimore CyberTrust Root
+> HEAD / HTTP/1.1
+Host: http2.akamai.com
+Accept: */*
+
+< HTTP/1.1 200 OK
+< Server: Apache
+< ETag: "0221aa7c9e7372cc419b3b38c7f435a5:1455753078"
+< Last-Modified: Wed, 17 Feb 2016 23:51:18 GMT
+< Accept-Ranges: bytes
+< Content-Length: 9942
+< Content-Type: text/html
+< rtt: 13
+< ghost_ip: 23.0.36.175
+< ghost_service_ip: 2.20.143.79
+< client_real_ip: 141.76.98.48
+< client_ip: 141.76.98.48
+< myproto: 
+< protocol_negotiation: h1
+< Cache-Control: max-age=43200
+< Expires: Sat, 19 Mar 2016 05:57:31 GMT
+< Date: Fri, 18 Mar 2016 17:57:31 GMT
+< Connection: keep-alive
+< Accept-CH: DPR, Width, Viewport-Width, Downlink, Save-Data
+< access-control-max-age: 86400
+< access-control-allow-credentials: false
+< access-control-allow-headers: *
+< access-control-allow-methods: GET,HEAD,POST
+< access-control-allow-origin: *
+< Strict-Transport-Security: max-age=31536000 ; includeSubDomains
+< 
+* Connection #0 to host http2.akamai.com left intact
